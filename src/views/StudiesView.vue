@@ -1,5 +1,5 @@
 <template>
-   <div class="about" :class="[{'blur-sm' : isClicked}]">
+   <div class="about">
       <div class="text-center mb-6">
          <h1 class="text-2xl">Studies list</h1>
       </div>
