@@ -1,11 +1,11 @@
 <template>
-   <div class="about">
+   <div class="about" :class="[{'blur-sm' : isClicked}]">
       <div class="text-center mb-6">
          <h1 class="text-2xl">Studies list</h1>
       </div>
 
       <!-- TODO: Load a modal when the button is clicked -->
-      <div data-info="This is the consent document" class="modal-box- hidden-" >
+      <div data-info="This is the consent document">
          <div class="modal-box" :class="isClicked ? 'block' : 'hidden'">
             <!-- Generated using cupcakeipsum -->
             <p>Caramels marzipan cheesecake lemon drops biscuit cookie. Pudding topping marzipan brownie oat cake pudding bonbon. Cupcake tootsie roll oat cake
@@ -94,7 +94,14 @@ button.consent {
    }
 }
 
+@keyframes modalOpen {
+   from {top: 30%;}
+   to {top: 50%;}
+}
+
 .modal-box{
-   @apply fixed z-50 p-8 bg-white rounded-3xl;
+   @apply fixed p-8 bg-white rounded-3xl z-10 left-1/2 top-1/2 overflow-auto md:w-auto md:h-auto w-full h-full shadow-2xl;
+   transform: translate(-50%, -50%);
+   animation: modalOpen 0.75s;
 }
 </style>
